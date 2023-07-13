@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'custom_faild.dart';
 class AddNoteButton extends StatelessWidget {
   const AddNoteButton({super.key});
 
@@ -8,23 +10,16 @@ class AddNoteButton extends StatelessWidget {
       padding: const EdgeInsets.all(18),
       child: Column(
         children: [
-          TextFormField(
-            decoration: InputDecoration(
-                labelText: "title",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                )),
-          ),
           const SizedBox(
             height: 20,
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                labelText: "title",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                )),
+          const CustomField(
+            label: "Title",
           ),
+          const SizedBox(
+            height: 10,
+          ),
+          const CustomField(label: "content",),
           const Spacer(),
           Container(
             padding: const EdgeInsets.all(10),

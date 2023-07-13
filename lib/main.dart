@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constants.dart';
 import 'package:note_app/view/screens/note_screen.dart';
 
 void main() {
@@ -11,9 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       theme: ThemeData(
-        brightness: Brightness.dark,
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: primaryColor
+        ),
+          brightness: Brightness.dark,
         useMaterial3: true,
+
         fontFamily: 'Poppins'
       ),
       home: const NoteScreen(),

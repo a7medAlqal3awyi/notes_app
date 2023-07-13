@@ -11,11 +11,15 @@ class NoteScreen extends StatelessWidget {
     return Scaffold(
       body: const NotesViewBody(),
       floatingActionButton: FloatingActionButton(
+
         onPressed: () {
           showModalBottomSheet(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18)
+            ),
               context: context, builder: (context) => const AddNoteButton());
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add,),
       ),
     );
   }
