@@ -19,7 +19,9 @@ class AddNoteButton extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const CustomField(label: "content",),
+          const CustomField(
+            label: "Content",
+          maxLines: 5,),
           const Spacer(),
           Container(
             padding: const EdgeInsets.all(10),
