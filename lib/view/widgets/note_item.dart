@@ -10,9 +10,9 @@ class NoteItem extends StatelessWidget {
       onTap: () => Navigator.push(context,
           MaterialPageRoute(builder: (context) => const EditNoteView())),
       child: Container(
-          padding: const EdgeInsets.only(top: 24, bottom: 24, left: 10),
+          padding: const EdgeInsets.only(top: 15, bottom: 24, left: 8),
           decoration: BoxDecoration(
-              color: Colors.green.withOpacity(.87),
+              color: Colors.deepOrange,
               borderRadius: BorderRadius.circular(18)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -20,14 +20,14 @@ class NoteItem extends StatelessWidget {
               ListTile(
                 title: const Text(
                   "Flutter Notes",
-                  style: TextStyle(fontSize: 26, color: Colors.black),
+                  style: TextStyle(fontSize: 24, color: Colors.black),
                 ),
                 subtitle: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   child: Text("this the note item is GOOD ahead",
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.black.withOpacity(.5),
+                        color: Colors.black.withOpacity(.7),
                       )),
                 ),
                 trailing: IconButton(

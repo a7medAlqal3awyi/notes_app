@@ -24,6 +24,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
+      autovalidateMode: autoValidateMode,
       child: Column(
         children: [
           const SizedBox(
@@ -49,7 +50,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
-                isLoading:state is AddNoteLoading ? true : false,
+                isLoading: state is AddNoteLoading ? true : false,
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
@@ -61,11 +62,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                   } else {
                     autoValidateMode = AutovalidateMode.always;
+                    setState(() {});
                   }
                 },
               );
             },
-          )
+          ),
+          const SizedBox(
+            height: 20,
+          ),
         ],
       ),
     );
